@@ -63,10 +63,10 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" text="TOP" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qcs-UU-UTA">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" text="TOP" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qcs-UU-UTA">
                                 <rect key="frame" x="20" y="64" width="560" height="132"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="132" id="7Bh-rO-xsp"/>
+                                    <constraint firstAttribute="height" constant="132" id="aMV-Cb-okX"/>
                                 </constraints>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="40"/>
@@ -81,13 +81,14 @@
                             <constraint firstItem="4dX-7y-jZ2" firstAttribute="leading" secondItem="E6l-4A-uhC" secondAttribute="leading" id="GER-nd-icU"/>
                             <constraint firstItem="cdH-GU-Urz" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="GdJ-4B-IhS"/>
                             <constraint firstItem="cdH-GU-Urz" firstAttribute="trailing" secondItem="gqI-aK-zrS" secondAttribute="trailing" id="N9l-NO-pxj"/>
-                            <constraint firstItem="cdH-GU-Urz" firstAttribute="leading" secondItem="qcs-UU-UTA" secondAttribute="leading" id="PgU-Sn-GWf"/>
+                            <constraint firstItem="qcs-UU-UTA" firstAttribute="centerX" secondItem="4dX-7y-jZ2" secondAttribute="centerX" id="WlW-Om-ocO"/>
                             <constraint firstItem="cdH-GU-Urz" firstAttribute="leading" secondItem="gqI-aK-zrS" secondAttribute="leading" id="cpU-gO-4xh"/>
                             <constraint firstItem="cdH-GU-Urz" firstAttribute="top" secondItem="4dX-7y-jZ2" secondAttribute="top" id="eXu-Dd-oL7"/>
-                            <constraint firstItem="qcs-UU-UTA" firstAttribute="centerX" secondItem="4dX-7y-jZ2" secondAttribute="centerX" id="ef4-xY-HI6"/>
-                            <constraint firstItem="cdH-GU-Urz" firstAttribute="trailing" secondItem="qcs-UU-UTA" secondAttribute="trailing" id="koh-cg-lER"/>
+                            <constraint firstItem="qcs-UU-UTA" firstAttribute="trailing" secondItem="gqI-aK-zrS" secondAttribute="trailing" id="gFq-I6-ZTf"/>
                             <constraint firstItem="4dX-7y-jZ2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ltl-qs-Gdg"/>
+                            <constraint firstItem="qcs-UU-UTA" firstAttribute="leading" secondItem="gqI-aK-zrS" secondAttribute="leading" id="mSr-vq-JWV"/>
                             <constraint firstItem="E6l-4A-uhC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="mm9-Ws-OfX"/>
+                            <constraint firstItem="qcs-UU-UTA" firstAttribute="top" secondItem="4dX-7y-jZ2" secondAttribute="bottom" id="moP-KV-bVo"/>
                             <constraint firstItem="E6l-4A-uhC" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="oda-YJ-FJ5"/>
                             <constraint firstItem="cdH-GU-Urz" firstAttribute="bottom" secondItem="E6l-4A-uhC" secondAttribute="top" id="wKO-E5-WFp"/>
                         </constraints>
