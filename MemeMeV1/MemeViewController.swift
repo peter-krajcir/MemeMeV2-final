@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MemeViewController.swift
 //  MemeMeV1
 //
 //  Created by Petrik on 17/09/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var imagePickerView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
@@ -37,14 +37,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         // disable top buttons until user selects an image
         disableTopButtons()
         
-        topTextField.defaultTextAttributes = memeTextAttributes
-        bottomTextField.defaultTextAttributes = memeTextAttributes
-        
-        topTextField.textAlignment = NSTextAlignment.Center
-        bottomTextField.textAlignment = NSTextAlignment.Center
-        
-        topTextField.delegate = self
-        bottomTextField.delegate = self
+        // initialise top and bottom text field with the default values
+        initialiseTextField(topTextField)
+        initialiseTextField(bottomTextField)
+    }
+    
+    func initialiseTextField(textField:UITextField) {
+        textField.defaultTextAttributes = memeTextAttributes
+        textField.textAlignment = NSTextAlignment.Center
+        textField.delegate = self
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -141,7 +142,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func textFieldDidBeginEditing(textField: UITextField) {
-        textField.text = ""
+        if (textField == topTextField && textField.text != "TOP") ||
+           (textField == bottomTextField && textField.text != "BOTTOM"){
+            textField.text = ""
+        }
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -151,13 +155,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func keyboardWillShow(notification: NSNotification) {
         if bottomTextField.isFirstResponder() {
-            view.frame.origin.y -= getKeyboardHeight(notification)
+            view.frame.origin.y = -getKeyboardHeight(notification)
         }
     }
     
     func keyboardWillHide(notification: NSNotification) {
         if bottomTextField.isFirstResponder() {
-            view.frame.origin.y += getKeyboardHeight(notification)
+            view.frame.origin.y = 0
         }
     }
     

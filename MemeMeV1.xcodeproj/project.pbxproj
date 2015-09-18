@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DF8B85E71BAAE42D002FC01A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8B85E61BAAE42D002FC01A /* AppDelegate.swift */; };
-		DF8B85E91BAAE42D002FC01A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8B85E81BAAE42D002FC01A /* ViewController.swift */; };
+		DF8B85E91BAAE42D002FC01A /* MemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8B85E81BAAE42D002FC01A /* MemeViewController.swift */; };
 		DF8B85EC1BAAE42D002FC01A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF8B85EA1BAAE42D002FC01A /* Main.storyboard */; };
 		DF8B85EE1BAAE42D002FC01A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF8B85ED1BAAE42D002FC01A /* Assets.xcassets */; };
 		DF8B85F11BAAE42D002FC01A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF8B85EF1BAAE42D002FC01A /* LaunchScreen.storyboard */; };
@@ -37,7 +37,7 @@
 /* Begin PBXFileReference section */
 		DF8B85E31BAAE42D002FC01A /* MemeMeV1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemeMeV1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF8B85E61BAAE42D002FC01A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DF8B85E81BAAE42D002FC01A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DF8B85E81BAAE42D002FC01A /* MemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeViewController.swift; sourceTree = "<group>"; };
 		DF8B85EB1BAAE42D002FC01A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DF8B85ED1BAAE42D002FC01A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF8B85F01BAAE42D002FC01A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				DF8B85E61BAAE42D002FC01A /* AppDelegate.swift */,
-				DF8B85E81BAAE42D002FC01A /* ViewController.swift */,
+				DF8B85E81BAAE42D002FC01A /* MemeViewController.swift */,
 				DF8B85EA1BAAE42D002FC01A /* Main.storyboard */,
 				DF8B85ED1BAAE42D002FC01A /* Assets.xcassets */,
 				DF8B85EF1BAAE42D002FC01A /* LaunchScreen.storyboard */,
@@ -262,7 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF8B86151BAB0C5B002FC01A /* Meme.swift in Sources */,
-				DF8B85E91BAAE42D002FC01A /* ViewController.swift in Sources */,
+				DF8B85E91BAAE42D002FC01A /* MemeViewController.swift in Sources */,
 				DF8B85E71BAAE42D002FC01A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,6 +488,7 @@
 				DF8B860D1BAAE42D002FC01A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DF8B860E1BAAE42D002FC01A /* Build configuration list for PBXNativeTarget "MemeMeV1Tests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +497,7 @@
 				DF8B86101BAAE42D002FC01A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DF8B86111BAAE42D002FC01A /* Build configuration list for PBXNativeTarget "MemeMeV1UITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +506,7 @@
 				DF8B86131BAAE42D002FC01A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
