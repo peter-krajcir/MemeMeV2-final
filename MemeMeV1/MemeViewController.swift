@@ -34,7 +34,7 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
         
-        // disable top buttons until user selects an image
+        // disable top button for sharing until user selects an image
         disableTopButtons()
         
         // initialise top and bottom text field with the default values
@@ -68,11 +68,6 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     @IBAction func pickAnImageFromAlbum(sender: AnyObject) {
         let imagePicker = UIImagePickerController()
@@ -92,12 +87,10 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     func enableTopButtons() {
         shareButton.enabled = true
-        cancelButton.enabled = true
     }
     
     func disableTopButtons() {
         shareButton.enabled = false
-        cancelButton.enabled = false
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
@@ -107,18 +100,20 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    @IBAction func setAppToDefault(sender: AnyObject) {
-        topTextField.text = "TOP"
-        bottomTextField.text = "BOTTOM"
-        imagePickerView.image = nil
-        disableTopButtons()
+    @IBAction func cancelView(sender: AnyObject) {
+        // dismiss the Meme Editor View when user presses cancel button
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction func shareImage(sender: AnyObject) {
         let generatedMemedImage = generateMemedImage()
         saveMeme(generatedMemedImage)
-        let controller = UIActivityViewController(activityItems: [generatedMemedImage], applicationActivities: nil)
-        presentViewController(controller, animated: true, completion: nil)
+        let activityController = UIActivityViewController(activityItems: [generatedMemedImage], applicationActivities: nil)
+        presentViewController(activityController, animated: true, completion: nil)
+        activityController.completionWithItemsHandler = {(activityType:String?, completed: Bool, returnedItems: [AnyObject]?, error: NSError?) in
+            // when user finished work in activity view, dismiss the Meme Editor View
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
     }
     
     func saveMeme(generatedMemeImage:UIImage) {
